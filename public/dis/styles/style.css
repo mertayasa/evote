@@ -1,0 +1,89 @@
+html {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: 0;
+          box-sizing: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Assistant", sans-serif;
+}
+
+nav {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+nav h3 {
+  font-weight: bold;
+}
+
+nav .btn-navbar-right {
+  background-color: #FF9E53;
+  margin-top: -10px !important;
+  margin-bottom: -8px !important;
+  margin-right: -18px !important;
+  height: 59px;
+  width: 100px;
+  border-radius: 0;
+  color: white;
+}
+
+nav .btn-navbar-right:hover {
+  color: white;
+  background-color: #ffae6f;
+}
+
+header {
+  height: 690px;
+  color: white;
+  background-color: #051334;
+  margin-top: -57px;
+  margin-bottom: -150px;
+}
+
+header .heading-text {
+  margin-top: 110px;
+}
+
+header .heading-text .rule-text p {
+  font-weight: 200;
+}
+
+.section-canditate-list .card h3 {
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+.section-canditate-list .card h5 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.section-canditate-list .card p {
+  font-weight: 300;
+  color: #474747;
+}
+
+.section-canditate-list .card .btn-warning {
+  background-color: #FF9E53;
+  color: white;
+  font-weight: 200;
+}
+
+.section-canditate-list .card .btn-primary {
+  background-color: #051334;
+}
+
+.section-canditate-list .card .btn {
+  border-radius: 4px;
+  border-color: transparent;
+}
+
+.section-timer h2 {
+  font-weight: bold;
+  font-size: 3rem;
+}
+/*# sourceMappingURL=style.css.map */
