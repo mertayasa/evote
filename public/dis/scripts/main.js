@@ -1,4 +1,4 @@
-var countDownDate = new Date("Jun 19, 2020 15:37:25").getTime();
+var countDownDate = new Date("Jun 16, 2020 15:49:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -22,6 +22,8 @@ var x = setInterval(function() {
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "EXPIRED";
+    document.getElementById("btnVote").remove();
+    document.getElementById("voteEndText").remove();
+    document.getElementById("countdown").innerHTML="Vote Berakhir";
   }
 }, 1000);

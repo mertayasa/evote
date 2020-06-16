@@ -51,6 +51,13 @@ header .heading-text .rule-text p {
   font-weight: 200;
 }
 
+header .divider {
+  width: 40%;
+  height: 2px;
+  background-color: white;
+  margin: auto;
+}
+
 .section-canditate-list .card h3 {
   text-align: center;
   font-weight: bold;
