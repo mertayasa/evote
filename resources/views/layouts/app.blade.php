@@ -14,5 +14,6 @@
   @yield('content')
 
   @include('includes.script')
+  @include('includes.admin.script')
 </body>
 </html>
