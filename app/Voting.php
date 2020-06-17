@@ -5,14 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Candidate extends Model
+class Voting extends Model
 {
     use SoftDeletes;
 
-    protected $fillable =[
-        'name', 'motto', 'vision', 'mission', 'image'
+    protected $fillable = [
+        'users_id', 'candidates_id'
     ];
 
-    protected $hidden =[];
-
+    protected $hidden = [];
 }
