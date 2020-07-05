@@ -31,13 +31,15 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ $item->name }}</h5>
                   <p class="card-text">"{{ $item->motto }}"</p>
-                  <a href="#" class="btn btn-warning" style="width: 100%;">Visi & Misi</a>
+                  <button type="button" class="btn btn-warning btnModal" data-toggle="modal" data-id="{{ $item->id }}" data-target="#exampleModal" style="width: 100%;">
+                    Visi & Misi
+                  </button>
                   @auth
                   <form action="{{ route('voting.store') }}" method="post">
                     @csrf
-                    <input type="hidden" value="{{ $item->id }}" name="candidates_id">
-                    <input type="hidden" value="{{Auth::user()->id}}" name="users_id">
-                    <button type="submit" class="btn btn-primary mt-2" id="btnVotes" style="width: 100%;">Vote</button>
+                    <input type="hidden" value="{{ $item->id }}" name="candidate_id">
+                    <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
+                    <button type="submit" class="btn btn-primary mt-2" id="btnVote" style="width: 100%;">Vote</button>
                   </form>
                   @endauth
                 </div>
@@ -49,6 +51,12 @@
         </div>
       </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modalDetail">
+      
+    </div>
+
   </main>
     
 @endsection

@@ -15,10 +15,15 @@ class CreateVotingsTable extends Migration
     {
         Schema::create('votings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('users_id');
-            $table->integer('candidates_id');
+            $table->foreignId('user_id')->constrained;
+            $table->foreignId('candidate_id')->constrained;
             $table->softDeletes();
             $table->timestamps();
+
+            // $table->foreign('user_id')->references('id')->on('users')
+            // ->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('candidate_id')->references('id')->on('candidates')
+            // ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -31,4 +36,5 @@ class CreateVotingsTable extends Migration
     {
         Schema::dropIfExists('votings');
     }
+
 }

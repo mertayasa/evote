@@ -15,8 +15,8 @@ class Candidate extends Model
 
     protected $hidden =[];
 
-    public function votings(){
-        return $this->hasMany('App\Voting');
+    public function Voting(){
+        return $this->hasMany(Voting::class);
     }
 
 }

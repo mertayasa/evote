@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','HomeController@index', function(){
-
 })->name('home')->middleware('auth');
+
+Route::get('get_details/{id}', 'HomeController@getdetails');
 
 Route::resource('voting', 'VotingController');
 

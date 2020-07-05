@@ -15,8 +15,11 @@ class Voting extends Model
 
     protected $hidden = [];
 
-    public function travel_package(){
-        return $this->belongsTo('App\Candidate');
-        return $this->belongsTo('App\User');
+    public function User(){
+        return $this->belongsTo(User::class);
+    }
+    
+    public function Candidate(){
+        return $this->belongsTo(Candidate::class);
     }
 }

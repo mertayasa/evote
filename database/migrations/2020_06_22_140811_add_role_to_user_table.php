@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddVotingStatusToUserTable extends Migration
+class AddRoleToUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddVotingStatusToUserTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('status')->default('no');
+            $table->string('role')->default('VOTERS');
+            $table->tinyInteger('status')->default(0);
         });
     }
 
@@ -26,6 +27,7 @@ class AddVotingStatusToUserTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role');
             $table->dropColumn('status');
         });
     }
