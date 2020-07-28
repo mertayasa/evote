@@ -8,40 +8,24 @@
 
     // Get id and pass it to modal
     $('.btnModal').on('click', function(){
+      modal = $('.candidateInfo')
         id = $(this).attr('data-id');
-        modal = $('.modalDetail');
         $.ajax({
           url: "{{ url('get_details') }}" + '/' + id,
           dataType: "json",
           method: "get",
           success:function(data){
             detail = data[0]
-            console.log(detail.name)
+            modal.empty()
+            console.log(data)
             modal.append(`
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Visi & Misi</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <ul>
-                      <li>` + detail.name + `</li>
-                      <li>` + detail.motto + `</li>
-                      <li>` + detail.vision + `</li>
-                      <li>` + detail.mission + `</li>
-                    </ul>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+                <ul>
+                  <li>` + detail.name + `</li>
+                  <li>` + detail.motto + `</li>
+                  <li>` + detail.vision + `</li>
+                  <li>` + detail.mission + `</li>
+                </ul>
+                <img src="/storage/${detail.image}" width="100%">
             `)
           }
         })

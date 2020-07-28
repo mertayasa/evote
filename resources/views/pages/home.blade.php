@@ -26,7 +26,7 @@
           @forelse ($items as $item)
             <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
               <div class="card" style="width: auto;">
-                <h3>01</h3>
+                <h3 class="p-0 pt-1">{{$loop->iteration}}</h3>
                 <img class="card-img-top" src="{{ Storage::url($item->image) }}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{ $item->name }}</h5>
@@ -54,7 +54,27 @@
 
     <!-- Modal -->
     <div class="modalDetail">
-      
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Visi & Misi</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="candidateInfo">
+
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </main>

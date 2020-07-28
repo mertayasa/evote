@@ -16,14 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','HomeController@index', function(){
 })->name('home')->middleware('auth');
 
-<<<<<<< HEAD
 Route::get('get_details/{id}', 'HomeController@getdetails');
-=======
-Route::get('/sentemail', 'UpdateUserController@index');
-Route::post('/sentemail/update', 'UpdateUserController@update');
-Route::post('/sentemail/verifypledge', 'UpdateUserController@verifypledge');
-Route::get('/sentemail/showverifypledge', 'UpdateUserController@show_verified_page');
->>>>>>> 79e9169fcf70217eb7c201d05868148d6a53b697
 
 Route::resource('voting', 'VotingController');
 Route::resource('update_user', 'UpdateUserController');
